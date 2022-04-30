@@ -1,10 +1,3 @@
-<!-- 
-        2 input di testo dove l'utente può scrivere
-        1 text are contenente il risultato
-        1 button per l'esecuzione del calcolo
-        2 menu a tendina per specificare il tipo di dato
-        2 label    
--->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -16,42 +9,43 @@
     <script src="script.js"></script>
 </head>
 
-<body>
-    <header>
-        <h1>Calcolo Velocità Download</h1>
-    </header>
-    <main>
-        <div class="data">
-            <p class="text">Inserire approssimativamente il numero di dati da scaricare</p>
-            <input id="dtsizetxt" type="text" placeholder="DATA SIZE">
-            <select id="datasize" required>
-                <option>TebiByte</option>
-                <option>TeraByte</option>
-                <option selected>GibiByte</option>
-                <option>GigaByte</option>
-                <option>MebiByte</option>
-                <option>MegaByte</option>
-            </select>
-        </div>
-        <div class="speed">
-            <p class="text">Inserire una media della velocità di download attuale</p>
-            <input id="dlspeedtxt" type="text" placeholder="DL SPEED">
-            <select id="internetspeed" required>
-                <option>GibiByte (GiB/s)</option>
-                <option>GigaByte (GB/s)</option>
-                <option>Gigabit (Gb/s)</option>
-                <option>MebiByte (MiB/s)</option>
-                <option>MegaByte (MB/s)</option>
-                <option selected>Megabit (Mb/s)</option>
-                <option>KibiByte (KiB/s)</option>
-                <option>KiloByte (KB/s)</option>
-                <option>Kilobit (Kb/s)</option>
-            </select>
-        </div>
-        <div>
-            <button id="calcbtn" onclick="Calcola();">Calcola</button>
-        </div>
-        <input id="txtarea" type="textarea">
-    </main>
+<body class=".firstbody" onload="fixDimension();">
+        <header>
+            <h1>Calcolo Velocità Download</h1>
+        </header>
+        <main class="center">
+            <div class="data">
+                <p class="text">Inserire approssimativamente il numero di dati da scaricare:</p>
+                <input id="dtsizetxt" type="text" placeholder="DATA SIZE">
+                <select id="datasize" required>
+                    <option>TebiByte</option>
+                    <option>TeraByte</option>
+                    <option selected>GibiByte</option>
+                    <option>GigaByte</option>
+                    <option>MebiByte</option>
+                    <option>MegaByte</option>
+                </select>
+            </div>
+            <div class="speed">
+                <p class="text">Inserire una media della velocità di download attuale:</p>
+                <input id="dlspeedtxt" type="text" placeholder="DL SPEED">
+                <select id="internetspeed" required>
+                    <option>GibiByte (GiB/s)</option>
+                    <option>GigaByte (GB/s)</option>
+                    <option>Gigabit (Gb/s)</option>
+                    <option>MebiByte (MiB/s)</option>
+                    <option>MegaByte (MB/s)</option>
+                    <option selected>Megabit (Mb/s)</option>
+                    <option>KibiByte (KiB/s)</option>
+                    <option>KiloByte (KB/s)</option>
+                    <option>Kilobit (Kb/s)</option>
+                </select>
+            </div>
+            <div>
+                <button id="calcbtn" onclick="Calcola();">Calcola</button>
+            </div>
+            <textarea readonly id="textarea"></textarea>
+        </main>
 </body>
+
 </html>
