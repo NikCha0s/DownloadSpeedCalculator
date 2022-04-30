@@ -11,42 +11,47 @@
 </head>
 
 <body onload="fixDimension();" onresize="fixDimension();">
-        <header>
-            <h1>Calcolo Velocità Download</h1>
-        </header>
-        <main class="center">
-            <div class="data">
-                <p class="text">Inserire approssimativamente il numero di dati da scaricare:</p>
-                <input id="dtsizetxt" type="text" placeholder="DATA SIZE" onkeypress="CheckNumber(1);" onkeyup="CheckNumber(1);">
-                <select id="datasize" required>
-                    <option>TebiByte</option>
-                    <option>TeraByte</option>
-                    <option selected>GibiByte</option>
-                    <option>GigaByte</option>
-                    <option>MebiByte</option>
-                    <option>MegaByte</option>
-                </select>
-            </div>
-            <div class="speed">
-                <p class="text">Inserire una media della velocità di download attuale:</p>
-                <input id="dlspeedtxt" type="text" placeholder="DL SPEED" onkeypress="CheckNumber(2);" onkeyup="CheckNumber(2);">
-                <select id="internetspeed" required>
-                    <option>GibiByte (GiB/s)</option>
-                    <option>GigaByte (GB/s)</option>
-                    <option>Gigabit (Gb/s)</option>
-                    <option>MebiByte (MiB/s)</option>
-                    <option>MegaByte (MB/s)</option>
-                    <option selected>Megabit (Mb/s)</option>
-                    <option>KibiByte (KiB/s)</option>
-                    <option>KiloByte (KB/s)</option>
-                    <option>Kilobit (Kb/s)</option>
-                </select>
-            </div>
-            <div>
-                <button id="calcbtn" onclick="Calcola();">Calcola</button>
-            </div>
-            <textarea readonly id="textarea"></textarea>
-        </main>
+    <header>
+        <div id="XBTNDIV">
+            <button id="XBTN" onclick="XBTN()">XX</button>
+        </div>
+        <h1>Calcolo Velocità Download</h1>
+    </header>
+    <main class="center">
+        <div class="data">
+            <p class="text">Inserire approssimativamente il numero di dati da scaricare:</p>
+            <input id="dtsizetxt" type="text" placeholder="DATA SIZE" onkeypress="CheckNumber(1);"
+                onkeyup="CheckNumber(1);">
+            <select id="datasize" required>
+                <option>TebiByte</option>
+                <option>TeraByte</option>
+                <option selected>GibiByte</option>
+                <option>GigaByte</option>
+                <option>MebiByte</option>
+                <option>MegaByte</option>
+            </select>
+        </div>
+        <div class="speed">
+            <p class="text">Inserire una media della velocità di download attuale:</p>
+            <input id="dlspeedtxt" type="text" placeholder="DL SPEED" onkeypress="CheckNumber(2);"
+                onkeyup="CheckNumber(2);">
+            <select id="internetspeed" required>
+                <option>GibiByte (GiB/s)</option>
+                <option>GigaByte (GB/s)</option>
+                <option>Gigabit (Gb/s)</option>
+                <option>MebiByte (MiB/s)</option>
+                <option>MegaByte (MB/s)</option>
+                <option selected>Megabit (Mb/s)</option>
+                <option>KibiByte (KiB/s)</option>
+                <option>KiloByte (KB/s)</option>
+                <option>Kilobit (Kb/s)</option>
+            </select>
+        </div>
+        <div>
+            <button id="calcbtn" onclick="Calcola();">Calcola</button>
+        </div>
+        <textarea readonly id="textarea"></textarea>
+    </main>
 </body>
 
 </html>

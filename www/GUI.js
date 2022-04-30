@@ -8,3 +8,7 @@ function fixDimension() {
     body.classList.remove(".firstbody");
     body.style.height = (body.clientHeight + percentualeDi(body.clientHeight, 3)).toString() + "px";
 }
+
+function XBTN() {
+    alert("è un sito web caprone!");
+}

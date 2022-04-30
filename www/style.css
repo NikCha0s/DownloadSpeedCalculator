@@ -1,37 +1,37 @@
-header{
+header {
     box-sizing: border-box;
     width: auto;
     height: auto;
     padding-top: 10%;
 }
 
-h1{
+h1 {
     text-align: center;
     font-stretch: extra-expanded;
 }
 
-html{
+html {
     background-image: url("/img/windows-xp.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
 }
-    
-body{
+
+body {
     min-width: 522;
     min-height: 453;
     background-image: url("/img/finestra.png");
     background-position: center;
     background-repeat: no-repeat;
     background-position-y: 100%;
-    display:inline-block;
+    display: inline-block;
     box-sizing: border-box;
     width: 98%;
 }
 
-.text{
+.text {
     font-size: 18px;
- }
+}
 
 .data {
     width: 100%;
@@ -42,7 +42,7 @@ body{
     font-size: 16px;
 }
 
-#datasize{
+#datasize {
     width: 146px;
     font-size: 16px;
 }
@@ -53,15 +53,15 @@ body{
     margin-bottom: 20px;
 }
 
-#dlspeedtxt{
+#dlspeedtxt {
     font-size: 16px;
 }
 
-#internetspeed{
+#internetspeed {
     font-size: 16px;
 }
 
-#calcbtn{
+#calcbtn {
     border: 1px solid gray;
     border-radius: 4px;
     width: 420px;
@@ -70,13 +70,13 @@ body{
     font-size: 20px;
 }
 
-#calcbtn:hover{
+#calcbtn:hover {
     border: 1px solid gray;
     border-radius: 4px;
-    background-color:lightcyan;
+    background-color: lightcyan;
 }
 
-#textarea{
+#textarea {
     display: inline-block;
     border: 1px solid black;
     border-radius: 8px;
@@ -86,7 +86,18 @@ body{
     resize: none;
 }
 
-.center{
+.center {
     text-align: center;
     margin-bottom: 10px;
+}
+
+#XBTNDIV {
+    text-align: center;
+    transform: translate(226px, 4px);
+}
+
+#XBTN {
+    color:transparent;
+    background-color: transparent;
+    border:none;
 }
