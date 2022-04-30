@@ -6,7 +6,6 @@ header{
 }
 
 h1{
-    color: yellow;
     text-align: center;
     font-stretch: extra-expanded;
 }
@@ -19,23 +18,19 @@ html{
 }
     
 body{
+    min-width: 522;
+    min-height: 453;
     background-image: url("/img/finestra.png");
     background-position: center;
     background-repeat: no-repeat;
     background-position-y: 100%;
-}
-
-.firstbody{
     display:inline-block;
     box-sizing: border-box;
-    width: 99%;
-    height: auto;
+    width: 98%;
 }
 
 .text{
-    color: greenyellow;
     font-size: 18px;
-    font-weight: bold;
  }
 
 .data {
@@ -48,6 +43,7 @@ body{
 }
 
 #datasize{
+    width: 146px;
     font-size: 16px;
 }
 
@@ -66,21 +62,24 @@ body{
 }
 
 #calcbtn{
-    background-color: lightblue;
+    border: 1px solid gray;
+    border-radius: 4px;
     width: 420px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: 'Times New Roman', serif;
     font-size: 20px;
 }
 
 #calcbtn:hover{
-    background-color: yellow;
-    color:blue;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color:lightcyan;
 }
 
 #textarea{
     display: inline-block;
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 8px;
     width: 420px;
     height: 80px;
     font-size: 17px;
