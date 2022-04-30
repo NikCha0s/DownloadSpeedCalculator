@@ -16,10 +16,33 @@ function ResetData() {
 function Calcola() {
     var dataSize = document.getElementById("dtsizetxt");
     var downloadSpeed = document.getElementById("dlspeedtxt");
+    var DataSizeFormat = document.getElementById("datasize");
+    var DownloadSpeedFormat = document.getElementById("internetspeed");
+
     var dataSizeValue = dataSize.value.replace(",", ".");
     var downloadSpeedValue = downloadSpeed.value.replace(",", ".");
+
     if (dataSize.value == "" || downloadSpeed.value == "" || dataSize.value == "." || downloadSpeed.value == "." || dataSize == "," || downloadSpeed == ",") return;
     var QuantitaDatiDaScaricare = parseFloat(dataSize.value);
+    var VelocitaDwl = parseFloat(downloadSpeedValue);
+
+    if (QuantitaDatiDaScaricare <= 0 || VelocitaDwl <= 0) {
+        var DtIndex = DataSizeFormat.selectedIndex;
+        switch (DtIndex) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+        }
+    }
 }
 
 function ElaboraTempo(tempo) {
@@ -35,16 +58,16 @@ function ElaboraTempo(tempo) {
     return `${giorni} giorni ${ore} ore ${minuti} minuti ${secondi}`;
 }
 
-function CheckNumber(number){
+function CheckNumber(number) {
     var textBox = (number == 1) ? document.getElementById("dtsizetxt") : document.getElementById("dlspeedtxt");
     var testo = textBox.value;
     var lastChar = testo.charAt(testo.length - 1);
     var caratteriConsentiti = "01234567890,.";
-    
+
     elimina = true;
-    for(const carattere of caratteriConsentiti){
-        if(lastChar == carattere) elimina = false;
+    for (const carattere of caratteriConsentiti) {
+        if (lastChar == carattere) elimina = false;
     }
 
-    if(elimina) textBox.value = testo.replaceAll(lastChar, "");
+    if (elimina) textBox.value = testo.replaceAll(lastChar, "");
 }
