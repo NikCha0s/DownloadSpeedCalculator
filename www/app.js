@@ -34,3 +34,17 @@ function ElaboraTempo(tempo) {
 
     return `${giorni} giorni ${ore} ore ${minuti} minuti ${secondi}`;
 }
+
+function CheckNumber(number){
+    var textBox = (number == 1) ? document.getElementById("dtsizetxt") : document.getElementById("dlspeedtxt");
+    var testo = textBox.value;
+    var lastChar = testo.charAt(testo.length - 1);
+    var caratteriConsentiti = "01234567890,.";
+    
+    elimina = true;
+    for(const carattere of caratteriConsentiti){
+        if(lastChar == carattere) elimina = false;
+    }
+
+    if(elimina) textBox.value = testo.replaceAll(lastChar, "");
+}
