@@ -1,0 +1,3 @@
+#!/bin/sh
+cd www || return
+python -m http.server
