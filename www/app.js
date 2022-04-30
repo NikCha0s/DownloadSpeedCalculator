@@ -26,36 +26,73 @@ function Calcola() {
     var QuantitaDatiDaScaricare = parseFloat(dataSize.value);
     var VelocitaDwl = parseFloat(downloadSpeedValue);
 
-    if (QuantitaDatiDaScaricare <= 0 || VelocitaDwl <= 0) {
-        var DtIndex = DataSizeFormat.selectedIndex;
-        switch (DtIndex) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-        }
+    if (QuantitaDatiDaScaricare <= 0 || VelocitaDwl <= 0) return;
+    var DtIndex = DataSizeFormat.selectedIndex;
+    switch (DtIndex) {
+        case 0:
+            QuantitaDatiDaScaricare *= Math.pow(2, 40);
+            break;
+        case 1:
+            QuantitaDatiDaScaricare *= Math.pow(10, 12);
+            break;
+        case 2:
+            QuantitaDatiDaScaricare *= Math.pow(2, 30);
+            break;
+        case 3:
+            QuantitaDatiDaScaricare *= Math.pow(10, 9);
+            break;
+        case 4:
+            QuantitaDatiDaScaricare *= Math.pow(2, 20);
+            break;
+        default:
+            QuantitaDatiDaScaricare *= Math.pow(10, 6);
+            break;
     }
+    var DlIndex = DownloadSpeedFormat.selectedIndex;
+    switch (DlIndex) {
+        case 0:
+            VelocitaDwl *= Math.pow(2, 30);
+            break;
+        case 1:
+            VelocitaDwl *= Math.pow(10, 9);
+            break;
+        case 2:
+            VelocitaDwl *= 134217728
+            break;
+        case 3:
+            VelocitaDwl *= Math.pow(2, 20);
+            break;
+        case 4:
+            VelocitaDwl *= Math.pow(10, 6);
+            break;
+        case 5:
+            VelocitaDwl *= 131072
+            break;
+        case 6:
+            VelocitaDwl *= Math.pow(2, 10);
+            break;
+        case 7:
+            VelocitaDwl *= Math.pow(10, 3);
+            break;
+        default:
+            VelocitaDwl *= 128;
+            break;
+    }
+    var tempo = QuantitaDatiDaScaricare / VelocitaDwl;
+    document.getElementById("textarea").value = ElaboraTempo(tempo);
 }
 
 function ElaboraTempo(tempo) {
     var giorni = Math.trunc(tempo / 86400);
-    var secondi = (int)(tempo % 86400); //86400 = (24*3600), pre-calcolato per diminuire i calcoli, usando la conversione esplicita con (int) il valore viene automaticamente troncato
+    var secondi = (tempo % 86400); //86400 = (24*3600), pre-calcolato per diminuire i calcoli, usando la conversione esplicita con (int) il valore viene automaticamente troncato
 
-    var ore = (secondi / 3600);
+    var ore = Math.trunc(secondi / 3600);
     secondi %= 3600;
 
-    var minuti = (secondi / 60);
-    secondi %= 60;
+    var minuti = Math.trunc(secondi / 60);
+    secondi = Math.round(secondi % 60);
 
-    return `${giorni} giorni ${ore} ore ${minuti} minuti ${secondi}`;
+    return `${giorni} giorni ${ore} ore ${minuti} minuti ${secondi} secondi`;
 }
 
 function CheckNumber(number) {

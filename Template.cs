@@ -13,7 +13,7 @@ namespace CalcoloVelocitaDownload
 {
     public partial class GUIForm : Form
     {
-        public GUIForm()
+        /*public GUIForm()
         {
             InitializeComponent();
             textBox1.TextChanged += TextBoxNotNumber;
@@ -25,7 +25,7 @@ namespace CalcoloVelocitaDownload
         {
             comboBox1.SelectedIndex = 2; comboBox2.SelectedIndex = 5;
             textBox1.Clear(); textBox2.Clear(); textBox3.Clear();
-        }
+        }*/
 
         private void Button1_Click(object sender, EventArgs e) //EID
         {
@@ -37,16 +37,29 @@ namespace CalcoloVelocitaDownload
 
             //0 TebiByte, 1 TeraByte, 2 GibiByte, 3 GigaByte, 4 MebiByte, 5 MegaByte
             int Dtindex = comboBox1.SelectedIndex;
-            if (Dtindex == 0) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(2, 40)); } else if (Dtindex == 1) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(10, 12)); } else if (Dtindex == 2) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(2, 30)); } else if (Dtindex == 3) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(10, 9)); } else if (Dtindex == 4) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(2, 20)); } else { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(10, 6)); }
+            if (Dtindex == 0) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(2, 40)); }
+            else if (Dtindex == 1) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(10, 12)); }
+            else if (Dtindex == 2) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(2, 30)); }
+            else if (Dtindex == 3) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(10, 9)); }
+            else if (Dtindex == 4) { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(2, 20)); } 
+            else { QuantitaDatiDaScaricare *= Convert.ToUInt64(Math.Pow(10, 6)); }
 
             //0 GibiByte, 1 GigaByte, 2 Gigabit, 3 MebiByte, 4 MegaByte, 5 Megabit, 6 KibiByte, 7 KiloByte, 8 Kilobit
             int Dlindex = comboBox2.SelectedIndex;
-            if (Dlindex == 0) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(2, 30)); } else if (Dlindex == 1) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(10, 9)); } else if (Dlindex == 2) { VelocitaDwl *= 134217728; } else if (Dlindex == 3) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(2, 20)); } else if (Dlindex == 4) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(10, 6)); } else if (Dlindex == 5) { VelocitaDwl *= 131072; } else if (Dlindex == 6) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(2, 10)); } else if (Dlindex == 7) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(10, 3)); } else { VelocitaDwl *= 128; }
+            if (Dlindex == 0) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(2, 30)); }
+            else if (Dlindex == 1) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(10, 9)); }
+            else if (Dlindex == 2) { VelocitaDwl *= 134217728; }
+            else if (Dlindex == 3) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(2, 20)); }
+            else if (Dlindex == 4) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(10, 6)); }
+            else if (Dlindex == 5) { VelocitaDwl *= 131072; }
+            else if (Dlindex == 6) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(2, 10)); }
+            else if (Dlindex == 7) { VelocitaDwl *= Convert.ToUInt64(Math.Pow(10, 3)); }
+            else { VelocitaDwl *= 128; }
             decimal tempo = QuantitaDatiDaScaricare / VelocitaDwl;
             textBox3.Text = ElaboraTempo(tempo);
         }
 
-        private void TextBoxNotNumber(object sender, EventArgs e)
+        /*private void TextBoxNotNumber(object sender, EventArgs e)
         {
             TextBox txbx = (TextBox)sender;
             foreach (char _KeyChar in txbx.Text)
@@ -66,7 +79,7 @@ namespace CalcoloVelocitaDownload
             //usato nel caso in cui il numero superi {sec}.
             //5 è quindi viene automaticamente arrotondato a {sec}++ grazie al convert.ToInt32.
             return $"{giorni} giorni {ore} ore {minuti} minuti {isec} secondi.";
-        }
+        }*/
 
         private void EsciToolStripMenuItem_Click(object sender, EventArgs e) {Application.Exit();} //EID
 
