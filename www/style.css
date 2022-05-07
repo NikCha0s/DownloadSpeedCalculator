@@ -93,10 +93,11 @@ body {
 
 #XBTNDIV {
     text-align: center;
-    transform: translate(226px, 4px);
 }
 
+
 #XBTN {
+    transform: translate(226px, 4px);
     color:transparent;
     background-color: transparent;
     border:none;
