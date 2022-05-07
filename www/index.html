@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalcoloVD - Web Version</title>
+    <title>DSC - Web Version</title>
     <link rel="stylesheet" href="style.css">
     <script src="GUI.js"></script>
     <script src="app.js"></script>
@@ -12,15 +12,16 @@
 
 <body onload="fixDimension();" onresize="fixDimension();">
     <div id="realbody">
+        <div id="blocco"></div>
         <header>
             <div id="XBTNDIV">
-                <button id="XBTN" onclick="XBTN()">XX</button>
+                <button id="XBTN" onclick="XBTN()">X</button>
             </div>
-            <h1>Calcolo Velocità Download</h1>
+            <h1>Download Speed Calculator</h1>
         </header>
         <main class="center">
             <div class="data">
-                <p class="text">Inserire approssimativamente il numero di dati da scaricare:</p>
+                <p class="text">Enter approximately the number of data to download:</p>
                 <input id="dtsizetxt" type="text" placeholder="DATA SIZE" onkeypress="CheckNumber(1);"
                     onkeyup="CheckNumber(1);">
                 <select id="datasize" required>
@@ -33,7 +34,7 @@
                 </select>
             </div>
             <div class="speed">
-                <p class="text">Inserire una media della velocità di download attuale:</p>
+                <p class="text">Enter an average of the current download speed:</p>
                 <input id="dlspeedtxt" type="text" placeholder="DL SPEED" onkeypress="CheckNumber(2);"
                     onkeyup="CheckNumber(2);">
                 <select id="internetspeed" required>
@@ -49,7 +50,7 @@
                 </select>
             </div>
             <div>
-                <button id="calcbtn" onclick="Calcola();">Calcola</button>
+                <button id="calcbtn" onclick="Calcola();">Calculate</button>
             </div>
             <textarea readonly id="textarea"></textarea>
         </main>
