@@ -1,12 +1,14 @@
+const rateo = 5.38;
 function percentualeDi(numeroIntero, percentuale) {
     return Math.round(numeroIntero / 100 * percentuale);
 }
 
+
 function fixDimension() {
-    var body = document.getElementsByTagName("body")[0];
-    body.style.height = "auto"
-    body.classList.remove(".firstbody");
-    body.style.height = (body.clientHeight + percentualeDi(body.clientHeight, 3)).toString() + "px";
+    var body = document.getElementById("realbody");
+    body.style.height = "auto";
+    var dimensioni = body.clientHeight + 10;
+    body.style.height = (dimensioni + percentualeDi(dimensioni, rateo)).toString() + "px";
 }
 
 function XBTN() {
